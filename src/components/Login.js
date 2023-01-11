@@ -1,14 +1,16 @@
 import { useState } from "react";
 import useSecurity from "../hooks/useSecurity";
+import {  useNavigate } from "react-router-dom";
 
 function Login(){
     const[username, setUsername] = useState("");
     const[password, setPasswrod] = useState("");
     const { login } = useSecurity()
+    const navigate = useNavigate();
 
-    const handleLogin=()=>{
-        login(username, password);
-
+    const handleLogin=async ()=>{
+        await login(username, password);
+        navigate('/private1');
     }
 
     return(

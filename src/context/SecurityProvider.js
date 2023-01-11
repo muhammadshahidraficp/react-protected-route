@@ -1,14 +1,16 @@
 import SecurityContext from "./SecurityContext";
 import { useState } from "react";
 
+
 const SecurityProvider = (props)=>{
-    const [isLoggedIn, setIsloggedIn] = useState(false);
+    const [isLoggedIn, setIsloggedIn] = useState();
+
     return(<SecurityContext.Provider 
         value={
             {
-                login:(username, password)=>{
+                login:async(username, password)=>{
                     if(username==="admin@admin.com" && password==="admin"){
-                        setIsloggedIn(true);
+                     setIsloggedIn(true);
                     }
                 },
                 isLoggedIn: isLoggedIn,

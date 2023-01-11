@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 
 function Home(){
 
-
     const navigate = useNavigate();
 
     function handleClick(param) {
@@ -15,13 +14,9 @@ function Home(){
             <button onClick={()=>{handleClick("/login")}}>Login</button><br/>
             <button onClick={()=>{handleClick("/private1")}}>Private 1</button><br/>
             <button onClick={()=>{handleClick("/private2")}}>Private 2</button><br/>
-            <button onClick={()=>{handleClick("/public1")}}>Public 1</button><br/>
-           
-            
+            <button onClick={()=>{handleClick("/public")}}>Public 1</button><br/>
         </div>
     );
 }
 
 export default Home;
-
-
